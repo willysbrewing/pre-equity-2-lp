@@ -62,12 +62,12 @@ a:hover, a:focus{
   color: #212121;
 }
 
-
 /* Utils */
 .padding0{padding:0;}
 .margin0{margin:0;}
 .margin-20{margin:20px 0;}
 .margin-40{margin:40px 0;}
+.margin-100{margin:100px 0;}
 .margin-40-t{margin:40px 0 0 0;}
 .margin-20-last{margin:20px 0;}
 .margin-15{margin:15px 0;}
@@ -93,9 +93,12 @@ a:hover, a:focus{
 .padding-15{padding: 15px;}
 .padding-10{padding: 10px;}
 .margin-r-20-btn{margin-right:20px}
+.padding0-desktop{padding:0;}
 @media (max-width: 767px) {
   .margin-r-20-btn{margin-right:0}
   .margin-20-last{margin:0;}
+  .center-mobile{display: table;margin: 0 auto;}
+  .padding0-desktop{padding:inherit;}
 }
 
 /* Brand */
@@ -219,6 +222,7 @@ a:hover, a:focus{
 .bg-amber-a200{background-color: #FFD740 !important;}
 .bg-amber-a400{background-color: #FFC400 !important;}
 .bg-amber-a700{background-color: #FFAB00 !important;}
+.bg-amber-transparent{background-color: rgba(255, 171, 0, 0.8);}
 .bg-grey-50{background-color: #FAFAFA !important;}
 .bg-grey-100{background-color: #F5F5F5 !important;}
 .bg-grey-200{background-color: #EEEEEE !important;}
@@ -261,42 +265,48 @@ a:hover, a:focus{
 
 /* CTA */
 .cta{
-  font: 300 18px 'Montserrat',sans-serif;
-  margin: 40px 0 0 0;
-}
-
-.cta a{
-  max-width: 240px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0);
-  color: #fff;
-  border: 1px solid #fff;
+  font: 300 16px 'Chau Philomene One', sans-serif;
+  max-width: 100%;
+  min-width: 240px;
+  text-align: center;
+  padding: 20px 25px;
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+  border-radius: 5px;
   text-transform: uppercase;
-}
-
-.cta a:hover, .cta a:focus{
-  text-decoration: none;
-  background: #fff;
-  color: #000000;
-  border: 1px solid #000000;
   transition: all 1s ease;
 }
 
-.cta-alt a{
-  max-width: 240px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0);
-  color: #000;
-  border: 1px solid #000;
-  text-transform: uppercase;
+.cta:hover, a.cta:focus{
+  text-decoration: none;
+  box-shadow: 0 20px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
 }
 
-.cta-alt a:hover, .cta a:focus{
-  text-decoration: none;
-  background: #000;
+@media (max-width: 767px) {
+  .cta{
+    width: 240px;
+    text-align: center;
+  }
+}
+
+/* Nav */
+#main-nav{
+  background: rgba(0, 0, 0, 0);
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1000;
+}
+
+#main-nav.navbar .navbar-collapse, .navbar .navbar-form{
   color: #fff;
-  border: 1px solid #000000;
-  transition: all 1s ease;
+  border: 0;
+}
+
+@media (max-width: 767px) {
+
+  #main-nav.navbar .navbar-collapse, .navbar .navbar-form{
+    color: #000;
+  }
+
 }
 
 /**
@@ -311,119 +321,48 @@ a:hover, a:focus{
   text-align: center;
 }
 
-/**
-* lp-app
-*/
-.lp-app{
-  height: 100vh;
-  min-height: 100vh;
-  max-height: 100vh;
-  display: none;
+.divider{
+  content: '';
+  width: 30px;
+  height: 5px;
 }
 
-/**
-* loader
-*/
-.lp-app .loader{
-  padding-top: 50vh;
-  color: #fff;
+/* Section */
+section{
+    padding: 40px 0;
 }
 
-/**
-* conent
-*/
-.lp-app .content {
-  opacity: 1;
-  transition: all linear 1s;
+section .section-header{
+  text-align: center;
+  margin: 0 0 60px 0;
 }
 
-.lp-app .content .feat{
-  padding: 40px 0;
-}
-
-.lp-app .content .feat img{
-  border-radius: 3px;
-  margin-top: 20px;
-}
-
-.lp-app .content .feat .text{
-  padding: 0;
-}
-
-.lp-app .content .feat .text h3{
-  margin-top: 0px;
-  font-size: 40px;
+section .section-header h3{
   font-family: 'Chau Philomene One';
+  font-size: 48px;
 }
 
-.lp-app .content .feat .text p{
-  font-weight: lighter;
-}
-
-.lp-app .content .feat ul{
-  padding: 0;
-}
-
-.lp-app .content .feat ul li{
-  float: left;
-  list-style-type: none;
-}
-
-.lp-app .content .feat ul li .btn{
-  height: 50px;
-  padding: 8px 50px;
-  border-radius: 3px;
-}
-
-.lp-app .content .feat ul li .btn.facebook{
-  background: #3b5998;
-  -webkit-mask: url(../images/facebook-logo.svg) center / contain no-repeat;
-}
-
-.lp-app .content .feat ul li .btn.instagram{
-  background: #000000;
-  -webkit-mask: url(../images/instagram-logo.svg) center / contain no-repeat;
-}
-
-.lp-app .content .feat ul li .btn.twitter{
-  background: #00aced;
-  -webkit-mask: url(../images/twitter-logo.svg) center / contain no-repeat;
-}
-
-@media (max-width: 767px) {
-
-  .lp-app .content .feat ul li .btn{
-    height: 40px;
-    padding: 8px 40px;
-  }
-
-  .lp-app .content .feat img{
-    margin-top: 0;
-  }
-
-  .lp-app .content .feat .text h3{
-    margin-top: 20px;
-  }
-
+section .section-header p{
+  text-align: center;
+  font-family: 'Montserrat';
+  font-size: 20px;
 }
 
 /* Hero */
-
-.lp-app .content .hero{
-  /*padding: 60px 0 40px 0;*/
-  min-height: 100vh;
+section.hero{
+  margin-top: -60px;
+  min-height: 560px;
+  max-height: 560px;
+  height: 560px;
   position: relative;
-  background-image: url('/images/rocket.jpg');
+  background-image: url('/images/background.jpg');
   background-size: cover;
   background-attachment: fixed;
-  /*background: #ffc107;
-  background: -moz-linear-gradient(160deg, #ffc107 0%, #ffffff 100%);
-  background: -webkit-linear-gradient(160deg, #ffc107 0%, #ffffff 100%);
-  background: linear-gradient(160deg, #ffc107 0%, #ffffff 100%);*/
-  text-align: left;
+  background-position: center center;
+  text-align: center;
 }
 
-.lp-app .content .hero::before, .lp-app .content .hero::after {
+section.hero::before, section.hero::after {
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -434,70 +373,214 @@ a:hover, a:focus{
   content: "";
 }
 
-.lp-app .content .hero::before {
-  background-color: rgba(0, 0, 0, 0.5);
+section.hero::before {
+  background-color: rgba(0, 0, 0, 0.3);
   transition: 5s ease;
 }
 
-.lp-app .content .hero .container {
+section.hero .container {
   z-index: 2;
   position: relative;
 }
 
-.lp-app .content .hero img{
-  width: 230px;
-  max-width: 230px;
-}
-
-.lp-app .content .hero h1{
-  padding-top: 40vh;
+section.hero h1{
+  padding-top: 15vh;
   text-transform: uppercase;
-  font-size: 100px;
-}
-
-.lp-app .content .hero h2{
-  font-size: 32px;
-}
-
-.lp-app .content .hero p{
-  color: #fff;
-  font-size: 16px;
+  font-family: 'Montserrat';
+  font-size: 120px;
 }
 
 @media (max-width: 767px) {
 
-  .lp-app .content .hero{
+  section.hero{
     background-attachment: inherit;
+    background-position-x: 70%;
   }
 
+  section.hero::before {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
 
-  .lp-app .content .hero img{
-    width: 100px;
+  section.hero h1{
+    padding-top: 30vh;
+    font-size: 40px;
   }
 
 }
 
+/* Feat */
+section.feat{
+  padding: 40px 0;
+}
+
+section.feat .box{
+  padding: 20px 20px 40px 20px;
+  background-color: rgba(255, 171, 0, 0.8);
+  border-radius: 5px;
+  color: #fff;
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+}
+
+section.feat .text h3{
+  font-size: 40px;
+  font-family: 'Chau Philomene One';
+}
+
+section.feat ul{
+  padding: 0;
+}
+
+section.feat ul li{
+  float: left;
+  list-style-type: none;
+}
+
+section.feat ul li .btn{
+  height: 50px;
+  padding: 8px 50px;
+  border-radius: 3px;
+}
+
+section.feat ul li .btn.facebook{
+  background: #3b5998;
+  -webkit-mask: url(../images/facebook-logo.svg) center / contain no-repeat;
+}
+
+section.feat ul li .btn.instagram{
+  background: #000000;
+  -webkit-mask: url(../images/instagram-logo.svg) center / contain no-repeat;
+}
+
+section.feat ul li .btn.twitter{
+  background: #00aced;
+  -webkit-mask: url(../images/twitter-logo.svg) center / contain no-repeat;
+}
+
+section.feat#what{
+  padding: 60px 0 100px 0;
+}
+section.feat#screen{
+  padding: 0;
+  background-image: url('https://wep.willysbrewing.com/images/beer.jpg');
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+}
+section.feat#screen .content{
+  min-height: 100vh;
+  padding: 20px 30px;
+}
+
+@media (max-width: 767px) {
+
+  section.feat#what{
+    padding: 20px 0;
+  }
+
+  section.feat .box{
+    padding: 0;
+    background-color: inherit;
+    color: #000;
+    box-shadow: none;
+  }
+
+  section.feat ul li .btn{
+    height: 40px;
+    padding: 8px 40px;
+  }
+
+  section.feat img{
+    margin-top: 0;
+  }
+
+  section.feat .text h3{
+    margin-top: 20px;
+  }
+
+  section.feat{
+    padding: 10px 0;
+  }
+
+  section.feat .text h3{
+    font-size: 40px;
+  }
+
+}
+
+/* Advantages */
+section.advantages{
+
+}
+
+section.advantages .box{
+  padding: 20px;
+  background-color: rgba(255, 171, 0, 0.8);
+  border-radius: 5px;
+  color: #fff;
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+}
+
+/* Benefits */
+section.benefits{
+  padding: 0 0 20px 0;
+}
+
+section.benefits .section-header{
+  text-align: center;
+}
+
+section.benefits .card{
+  border-radius: 10px;
+}
+
+section.benefits .card .benefit-info ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+section.benefits .card .benefit-info ul li{
+  margin: 20px 0;
+}
+
+section.benefits .card .benefit-info ul li h6{
+  font-size: 16px;
+}
+
+section.benefits .card .benefit-optin{
+
+}
+
+section.benefits .card .benefit-optin .price{
+  font-size: 28px;
+}
+
+@media (max-width: 991px) {
+  section.benefits .card{
+    margin: 20px 0;
+  }
+}
+
+/* Mosaic */
+section.mosaic  {
+
+}
+
+section.mosaic .mosaic-img{
+  width: 100%;
+  height: 320px;
+  background-size: cover;
+  background-position: center center;
+  border: 5px solid white;
+}
+
 /* Footer */
-.lp-app .content footer{
-  background-color: #000;
+footer{
   color: #fff;
   padding: 20px 0;
 }
 
-.lp-app .content footer a{
+footer a{
   color: #fff;
-}
-
-@media (max-width: 767px) {
-
-  .lp-app .content .feat{
-    padding: 10px 0;
-  }
-
-  .lp-app .content .feat .text h3{
-    font-size: 40px;
-  }
-
 }
 
 /* Modal */
