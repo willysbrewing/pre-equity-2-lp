@@ -94,11 +94,14 @@ a:hover, a:focus{
 .padding-10{padding: 10px;}
 .margin-r-20-btn{margin-right:20px}
 .padding0-desktop{padding:0;}
+.margin-t-40-destkop{margin-top: 40px;}
 @media (max-width: 767px) {
   .margin-r-20-btn{margin-right:0}
   .margin-20-last{margin:0;}
   .center-mobile{display: table;margin: 0 auto;}
   .padding0-desktop{padding:inherit;}
+  .margin-t-40-mobile{margin-top: 40px;}
+  .margin-t-40-destkop{margin-top: 0px;}
 }
 
 /* Brand */
@@ -334,7 +337,7 @@ section{
 
 section .section-header{
   text-align: center;
-  margin: 0 0 60px 0;
+  margin: 0 0 20px 0;
 }
 
 section .section-header h3{
@@ -477,6 +480,14 @@ section.feat#screen .content{
     padding: 20px 0;
   }
 
+  section.feat#screen{
+    background-position-x: 70%;
+  }
+
+  section.feat#screen .content{
+    padding: 20px 0;
+  }
+
   section.feat .box{
     padding: 0;
     background-color: inherit;
@@ -509,7 +520,6 @@ section.feat#screen .content{
 
 /* Advantages */
 section.advantages{
-
 }
 
 section.advantages .box{
@@ -522,7 +532,7 @@ section.advantages .box{
 
 /* Benefits */
 section.benefits{
-  padding: 0 0 20px 0;
+  padding: 40px 0;
 }
 
 section.benefits .section-header{
@@ -562,7 +572,7 @@ section.benefits .card .benefit-optin .price{
 
 /* Mosaic */
 section.mosaic  {
-
+  padding: 5px 0;
 }
 
 section.mosaic .mosaic-img{
@@ -574,13 +584,35 @@ section.mosaic .mosaic-img{
 }
 
 /* Footer */
-footer{
-  color: #fff;
+footer.footer {
+  background-color: #2e3234;
   padding: 20px 0;
 }
 
-footer a{
+footer .title{
   color: #fff;
+  font-family: 'Chau Philomene One', sans-serif;
+  text-transform: uppercase;
+  padding-top: 20px;
+}
+
+footer .btn-social{
+  font-size: 30px;
+}
+
+footer .copyright{
+  color: #ffffff;
+  font-family: 'Chau Philomene One', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+
+  footer .nav > li{
+    float: left;
+  }
+
 }
 
 /* Modal */
