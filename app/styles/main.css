@@ -111,6 +111,20 @@ a:hover, a:focus{
     font-weight: bold;
     letter-spacing: 2px;
 }
+.highlight{
+  padding: 5px 10px;
+  line-height: 1.5;
+  border-radius: 5px;
+  display:inline;
+}
+.bg-gradient{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffc107+0,ff6f00+100 */
+  background: #ffc107; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #ffc107 0%, #ff6f00 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #ffc107 0%,#ff6f00 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #ffc107 0%,#ff6f00 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc107', endColorstr='#ff6f00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
 
 /* Material */
 .material-shadow{
@@ -210,6 +224,7 @@ a:hover, a:focus{
 
 /* Background Colors */
 .bg-white{background-color: rgba(255,255,255,1) !important;}
+.bg-white-transparent{background-color: rgba(255, 255, 255, 0.9);}
 .bg-black{background-color: rgba(0,0,0,1) !important;}
 .bg-amber-50{background-color: #FFF8E1 !important;}
 .bg-amber-100{background-color: #FFECB3 !important;}
@@ -462,17 +477,21 @@ section.feat ul li .btn.twitter{
 section.feat#what{
   padding: 60px 0 100px 0;
 }
-section.feat#screen{
+section.feat.screen{
   padding: 0;
-  background-image: url('https://wep.willysbrewing.com/images/beer.jpg');
   background-size: cover;
   background-position: center center;
-  min-height: 100vh;
 }
-section.feat#screen .content{
-  min-height: 100vh;
+section.feat.screen .content{
   padding: 20px 30px;
 }
+section.feat.screen#screen1{
+  background-image: url('https://wep.willysbrewing.com/images/beer.jpg');
+}
+section.feat.screen#screen2{
+  background-image: url('https://wep.willysbrewing.com/images/wep06.jpg');
+}
+
 
 @media (max-width: 767px) {
 
@@ -480,11 +499,11 @@ section.feat#screen .content{
     padding: 20px 0;
   }
 
-  section.feat#screen{
+  section.feat.screen{
     background-position-x: 70%;
   }
 
-  section.feat#screen .content{
+  section.feat.screen .content{
     padding: 20px 0;
   }
 
@@ -520,6 +539,7 @@ section.feat#screen .content{
 
 /* Advantages */
 section.advantages{
+  padding: 20px 0 0 0;
 }
 
 section.advantages .box{
@@ -528,6 +548,13 @@ section.advantages .box{
   border-radius: 5px;
   color: #fff;
   box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+  min-height: 250px;
+}
+
+@media (max-width: 991px) {
+  section.advantages .box{
+    min-height: inherit;
+  }
 }
 
 /* Benefits */
