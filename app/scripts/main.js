@@ -37,7 +37,7 @@
 
         // init material
         $.material.init();
-        
+
         // Form
         var welcomeForm = document.getElementById('register-form');
         if (welcomeForm) {
@@ -53,13 +53,14 @@
 
           try{
             var form = document.getElementById('register-form');
+            var name = form.querySelector('#inputName').value;
             var email = form.querySelector('#inputEmail').value;
             var policy = form.querySelector('#policy').checked;
 
-            if(email && policy){
+            if(name && email && policy){
               form.querySelector('#inputEmail').style.borderColor = 'inherit';
               form.querySelector('#policy').style.borderColor = 'inherit';
-              var data = {email:email};
+              var data = {name:name, email:email};
               var leadFormButton = document.getElementById('lead-form-button');
               leadFormButton.style.display = 'none';
               var processing = document.getElementById('processing-form');
@@ -69,7 +70,7 @@
                 sendEmail('c348a464-4240-4cf4-9c88-7b2c892070d7', data);
 
                 // Track Event
-                dataLayer.push({'event': 'lead_real'});
+                // dataLayer.push({'event': 'lead_real'});
 
                 processing.style.display = 'none';
                 var success = document.getElementById('success-form');
@@ -78,11 +79,14 @@
               catch(e){}
             }
             else {
+              if (!name || name === '') {
+                form.querySelector('#inputName').style.backgroundImage = 'linear-gradient(#F44336, #F44336), linear-gradient(#F44336, #F44336)';
+              }
               if (!email || email === '') {
-                form.querySelector('#inputEmail').style.borderColor = 'red';
+                form.querySelector('#inputEmail').style.backgroundImage = 'linear-gradient(#F44336, #F44336), linear-gradient(#F44336, #F44336)';
               }
               if (!policy) {
-                form.querySelector('#policy').style.borderColor = 'red';
+                form.querySelector('#policy').style.backgroundImage = 'linear-gradient(#F44336, #F44336), linear-gradient(#F44336, #F44336)';
               }
             }
           } catch(e){}

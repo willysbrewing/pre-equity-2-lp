@@ -62,6 +62,20 @@ a:hover, a:focus{
   color: #212121;
 }
 
+.form-group{
+  margin: 0 0 20px 0;
+}
+
+#lead-form-button{
+  margin-top: 40px;
+}
+
+@media (max-width: 767px) {
+  #lead-form-button{
+    margin-top: 0;
+  }
+}
+
 /* Utils */
 .padding0{padding:0;}
 .margin0{margin:0;}
@@ -433,13 +447,13 @@ section.feat{
 
 section.feat .box{
   padding: 20px 20px 40px 20px;
-  background-color: rgba(255, 171, 0, 0.8);
+  background-color: rgba(255, 171, 0, 0.9);
   border-radius: 5px;
   color: #fff;
   box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
 }
 
-section.feat .text h3{
+section.feat .text h2, section.feat .text h3{
   font-size: 40px;
   font-family: 'Chau Philomene One';
 }
@@ -489,7 +503,7 @@ section.feat.screen#screen1{
   background-image: url('https://wep.willysbrewing.com/images/beer.jpg');
 }
 section.feat.screen#screen2{
-  background-image: url('https://wep.willysbrewing.com/images/wep06.jpg');
+  background-image: url('https://wep.willysbrewing.com/images/wep04.jpg');
 }
 
 
@@ -523,18 +537,15 @@ section.feat.screen#screen2{
     margin-top: 0;
   }
 
-  section.feat .text h3{
+  section.feat .text h2, section.feat .text h3{
     margin-top: 20px;
+    font-size: 40px;
   }
 
   section.feat{
     padding: 10px 0;
   }
-
-  section.feat .text h3{
-    font-size: 40px;
-  }
-
+  
 }
 
 /* Advantages */
